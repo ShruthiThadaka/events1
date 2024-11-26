@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>Click me!</button>
+    <button>Button 1</button>
+    <button>Button 2</button>
+    <button>Button 3</button>
+    <script>
+        const btn = document.getElementsByTagName("button")[0]
+        btn.addEventListener("click",()=>console.log("You clicked me"))   //Shows output in console when we click click me button
+        btn.addEventListener("click",()=>alert("Clicked me"))             //Shows alert msg clicked me
+
+        const btn1 = document.getElementsByTagName("button")[1];
+        btn1.addEventListener("click",function(){
+            alert("You clicked button 1")                               //Shows alert msg when button 1 is clicked
+        })
+        
+        const btn2 = document.getElementsByTagName("button")[2].addEventListener("click",(event)=>console.log(event.srcElement.textContent));
+        //Gives the content which is inside the button in the console
+
+        const btn3 = document.getElementsByTagName("button")[3].addEventListener("click",(event)=>alert(event.target.textContent))
+        //Gives alert msg which shows the content inside the button 
+
+    </script>
+</body>
+
+</html>
